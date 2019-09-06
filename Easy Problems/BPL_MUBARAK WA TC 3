@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+int main (int argc , char** argv){
+    int n;
+    cin>>n;
+    while(n--){
+    string s;
+    cin>>s;
+    int balls=0;
+    for(int i=0 ; i< s.size() ; i++){
+        if(s[i] != 'W' && s[i] != 'N' && s[i] != 'D'){
+            balls++;
+        }
+    }
+    if(balls <= 1) cout<<balls<<" BALL"<<endl;
+    else if(balls <= 5 ) cout<<balls<<" BALLS"<<endl;
+    else if(balls >= 6){
+        int over = balls / 6;
+        if(over <=1 ){
+            cout<<over<<" OVER";
+        }
+        else {
+            cout<<over<<" OVERS ";
+        }
+
+
+        if(balls%6 == 0){
+            cout<<endl;
+        }
+        else if(balls % 6 == 1){
+            cout<<" "<<1<<" BALL"<<endl;
+        }
+        else {
+            cout<<" "<<balls<<" BALLS"<<endl;
+        }
+    }
+     
+
+    }
+    
+    return 0;
+}
